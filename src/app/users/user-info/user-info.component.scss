@@ -1,0 +1,23 @@
+.info {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  background-color: rgb(151, 233, 253);
+  padding-bottom: 10px;
+
+  &__title {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  &__list {
+    &:hover {
+      transform: scale(0.9);
+    }
+  }
+
+  &__btn {
+    width: 290px;
+    margin-bottom: 10px;
+  }
+}

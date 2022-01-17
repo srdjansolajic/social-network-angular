@@ -1,0 +1,14 @@
+.user {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  background-color: rgb(151, 233, 253);
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &__title {
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col" *ngFor="let user of allUsers">
+      <div class="card user" style="width: 18rem">
+        <div class="card-body">
+          <h5 class="card-title user__title">
+            {{ user.id }}. {{ user.firstName }} {{ user.surname }}
+          </h5>
+          <p *ngIf="user.age" class="card-text">Age: {{ user.age }}</p>
+          <p *ngIf="!user.age" class="card-text">Age: /</p>
+          <p class="card-text">Gender: {{ user.gender }}</p>
+          <p class="card-text">Friends: {{ user.friends.length }}</p>
+          <a (click)="showMore(user.id)" class="btn btn-primary">More info</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

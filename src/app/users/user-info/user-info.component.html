@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="card col-12 info" style="width: 18rem">
+      <div class="card-body">
+        <h5 class="card-title info__title">
+          {{ currentUser.firstName }} {{ currentUser.surname }}
+        </h5>
+      </div>
+
+      <p class="card-text info__title">Friends:</p>
+      <ul class="list-group list-group-flush" *ngFor="let friend of friends">
+        <li class="list-group-item info__list">
+          {{ friend.firstName }} {{ friend.surname }}
+        </li>
+      </ul>
+
+      <p class="card-text info__title">Friends Of Friends:</p>
+      <ul
+        class="list-group list-group-flush"
+        *ngFor="let friend of friendOfFriends"
+      >
+        <li class="list-group-item info__list">
+          {{ friend.firstName }} {{ friend.surname }}
+        </li>
+      </ul>
+
+      <p class="card-text info__title">Suggested Friends:</p>
+      <div *ngIf="suggestedFriends.length > 0; else noSuggestedFriend">
+        <ul
+          class="list-group list-group-flush"
+          *ngFor="let suggest of suggestedFriends"
+        >
+          <li class="list-group-item info__list">
+            {{ suggest.firstName }} {{ suggest.surname }}
+          </li>
+        </ul>
+      </div>
+      <ng-template #noSuggestedFriend>No Suggested Friends </ng-template>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center">
+    <button
+      type="button"
+      class="btn btn-outline-primary justify-content-center info__btn"
+      (click)="back()"
+    >
+      Back
+    </button>
+  </div>
+</div>
